@@ -1,6 +1,6 @@
 from library import Library
 from book import Book
-
+import sys
 
 libraries = []
 num_of_books = 0
@@ -45,19 +45,31 @@ with open('a_example.txt') as input:
 
 
 
-# print(num_of_books)
-# print(num_of_libs)
-# print(max_scan_days)
-# print(book_scores)
-
-for l in libraries:
-    print(l)
-    for book in l.books:
-        print(book)
 
 
+# libraries
+# num_of_books
+# num_of_libs
+# max_scan_days 
+# book_scores
+
+
+comp_signuptime = sys.maxsize
+lib = None
+days_needed = 0
+num_of_lib_to_scan = 0
+
+for library in libraries:
+
+    if (int(library.signup_time) < int(comp_signuptime)):
+        comp_signuptime = library.signup_time
+        lib = library
+
+
+days_needed = days_needed + lib.signup_time
+    
 
 
 
 
-
+print(lib)
