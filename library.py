@@ -1,7 +1,8 @@
 class Library:
 
 
-    def __init__(self, num_of_books, signup_time, max_bookscanned):
+    def __init__(self, id,  num_of_books, signup_time, max_bookscanned):
+        self.id = id
         self.signup_time = signup_time
         self.max_bookscanned = max_bookscanned
         self.num_of_books = num_of_books
